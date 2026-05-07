@@ -1,0 +1,166 @@
+---
+# Ansible Playbook — Cowrie SSH Honeypot Deployment
+# Author: Abdul Ahad
+# Usage: ansible-playbook -i inventory.ini deploy_cowrie.yml
+
+- name: Deploy Cowrie SSH Honeypot
+  hosts: honeypot
+  become: yes
+  vars:
+    cowrie_user: cowrie
+    cowrie_home: /home/cowrie
+    cowrie_port: 2222
+    real_ssh_port: 22
+
+  tasks:
+
+    # ── System prep ────────────────────────────────────────────────────────
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Install system dependencies
+      apt:
+        name:
+          - git
+          - python3
+          - python3-pip
+          - python3-venv
+          - python3-dev
+          - libssl-dev
+          - libffi-dev
+          - build-essential
+          - authbind
+          - virtualenv
+        state: present
+
+    # ── Create cowrie user ─────────────────────────────────────────────────
+    - name: Create cowrie system user
+      user:
+        name: "{{ cowrie_user }}"
+        shell: /bin/bash
+        home: "{{ cowrie_home }}"
+        system: yes
+        createhome: yes
+
+    # ── Clone Cowrie ───────────────────────────────────────────────────────
+    - name: Clone Cowrie repository
+      git:
+        repo: https://github.com/cowrie/cowrie.git
+        dest: "{{ cowrie_home }}/cowrie"
+        version: master
+        force: yes
+      become_user: "{{ cowrie_user }}"
+
+    # ── Python venv + deps ─────────────────────────────────────────────────
+    - name: Create Python virtual environment
+      command: python3 -m venv {{ cowrie_home }}/cowrie/cowrie-env
+      args:
+        creates: "{{ cowrie_home }}/cowrie/cowrie-env"
+      become_user: "{{ cowrie_user }}"
+
+    - name: Install Cowrie Python requirements
+      pip:
+        requirements: "{{ cowrie_home }}/cowrie/requirements.txt"
+        virtualenv: "{{ cowrie_home }}/cowrie/cowrie-env"
+      become_user: "{{ cowrie_user }}"
+
+    # ── Configure Cowrie ───────────────────────────────────────────────────
+    - name: Copy Cowrie config template
+      copy:
+        src: "{{ cowrie_home }}/cowrie/etc/cowrie.cfg.dist"
+        dest: "{{ cowrie_home }}/cowrie/etc/cowrie.cfg"
+        remote_src: yes
+        force: no
+      become_user: "{{ cowrie_user }}"
+
+    - name: Set Cowrie listen port
+      lineinfile:
+        path: "{{ cowrie_home }}/cowrie/etc/cowrie.cfg"
+        regexp: "^#?listen_port"
+        line: "listen_port = {{ cowrie_port }}"
+
+    - name: Set Cowrie hostname (fake)
+      lineinfile:
+        path: "{{ cowrie_home }}/cowrie/etc/cowrie.cfg"
+        regexp: "^#?hostname"
+        line: "hostname = svr04"
+
+    - name: Enable JSON logging
+      lineinfile:
+        path: "{{ cowrie_home }}/cowrie/etc/cowrie.cfg"
+        regexp: "^#?\\[output_jsonlog\\]"
+        line: "[output_jsonlog]"
+
+    - name: Set JSON log path
+      lineinfile:
+        path: "{{ cowrie_home }}/cowrie/etc/cowrie.cfg"
+        insertafter: "\\[output_jsonlog\\]"
+        line: "logfile = var/log/cowrie/cowrie.json"
+
+    # ── Move real SSH to different port ────────────────────────────────────
+    - name: Change real SSH port to 2222 in sshd_config
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: "^#?Port"
+        line: "Port 2222"
+      notify: Restart SSH
+
+    # ── Redirect port 22 to Cowrie port ───────────────────────────────────
+    - name: Redirect port 22 to Cowrie (iptables)
+      iptables:
+        table: nat
+        chain: PREROUTING
+        protocol: tcp
+        destination_port: "22"
+        jump: REDIRECT
+        to_ports: "{{ cowrie_port }}"
+        state: present
+
+    - name: Save iptables rules
+      shell: iptables-save > /etc/iptables/rules.v4
+      ignore_errors: yes
+
+    # ── Create log directory ───────────────────────────────────────────────
+    - name: Create Cowrie log directory
+      file:
+        path: "{{ cowrie_home }}/cowrie/var/log/cowrie"
+        state: directory
+        owner: "{{ cowrie_user }}"
+        group: "{{ cowrie_user }}"
+        mode: "0755"
+
+    # ── Systemd service ────────────────────────────────────────────────────
+    - name: Create Cowrie systemd service
+      copy:
+        dest: /etc/systemd/system/cowrie.service
+        content: |
+          [Unit]
+          Description=Cowrie SSH Honeypot
+          After=network.target
+
+          [Service]
+          Type=simple
+          User={{ cowrie_user }}
+          WorkingDirectory={{ cowrie_home }}/cowrie
+          ExecStart={{ cowrie_home }}/cowrie/cowrie-env/bin/python bin/cowrie start -n
+          ExecStop={{ cowrie_home }}/cowrie/cowrie-env/bin/python bin/cowrie stop
+          Restart=always
+          RestartSec=5
+
+          [Install]
+          WantedBy=multi-user.target
+
+    - name: Enable and start Cowrie service
+      systemd:
+        name: cowrie
+        enabled: yes
+        state: started
+        daemon_reload: yes
+
+  handlers:
+    - name: Restart SSH
+      service:
+        name: sshd
+        state: restarted
